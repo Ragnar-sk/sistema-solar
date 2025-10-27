@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NUESTRO SISTEMA SOLAR</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>NUESTRO SISTEMA SOLAR</h1>
+  </header>
+
+  <div class="container">
+    <!-- Panel lateral -->
+    <aside class="sidebar">
+      <h2>Planetas</h2>
+      <ul>
+        <li><button data-planet="mercury">Mercurio</button></li>
+        <li><button data-planet="venus">Venus</button></li>
+        <li><button data-planet="earth">Tierra</button></li>
+        <li><button data-planet="mars">Marte</button></li>
+        <li><button data-planet="jupiter">Júpiter</button></li>
+        <li><button data-planet="saturn">Saturno</button></li>
+        <li><button data-planet="uranus">Urano</button></li>
+        <li><button data-planet="neptune">Neptuno</button></li>
+      </ul>
+    </aside>
+
+    <!-- Sistema solar -->
+    <main id="solar-system">
+      <div class="sun"></div>
+
+      <div class="orbit orbit-mercury">
+        <div class="planet mercury"></div>
+        <div class="label mercury-label">Mercurio</div>
+      </div>
+
+      <div class="orbit orbit-venus">
+        <div class="planet venus"></div>
+        <div class="label venus-label">Venus</div>
+      </div>
+
+      <div class="orbit orbit-earth">
+        <div class="planet earth"></div>
+        <div class="label earth-label">Tierra</div>
+      </div>
+
+      <div class="orbit orbit-mars">
+        <div class="planet mars"></div>
+        <div class="label mars-label">Marte</div>
+      </div>
+
+      <div class="orbit orbit-jupiter">
+        <div class="planet jupiter"></div>
+        <div class="label jupiter-label">Júpiter</div>
+      </div>
+
+      <div class="orbit orbit-saturn">
+        <div class="planet saturn"></div>
+        <div class="label saturn-label">Saturno</div>
+      </div>
+
+      <div class="orbit orbit-uranus">
+        <div class="planet uranus"></div>
+        <div class="label uranus-label">Urano</div>
+      </div>
+
+      <div class="orbit orbit-neptune">
+        <div class="planet neptune"></div>
+        <div class="label neptune-label">Neptuno</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="planet-modal" class="hidden">
+    <div class="modal-content">
+      <button id="close-modal">✕</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <ul id="modal-facts"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
