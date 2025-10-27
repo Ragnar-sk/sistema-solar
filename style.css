@@ -1,0 +1,170 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: radial-gradient(circle at center, #000010 0%, #000 100%);
+  color: white;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+.sidebar h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.sidebar ul { list-style: none; }
+.sidebar button {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.sidebar button:hover { background: #333; }
+
+/* Sistema Solar */
+#solar-system {
+  position: relative;
+  width: 800px;
+  height: 800px;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff6c6, #ffcc33 30%, #ff9900 70%, #b35400 100%);
+  box-shadow: 0 0 60px 30px rgba(255,180,0,0.3);
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  transform-origin: center;
+  animation: spin linear infinite;
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/* Planetas */
+.mercury { width: 10px; height: 10px; background: gray; }
+.venus { width: 14px; height: 14px; background: goldenrod; }
+.earth { width: 16px; height: 16px; background: dodgerblue; }
+.mars { width: 12px; height: 12px; background: tomato; }
+.jupiter { width: 40px; height: 40px; background: peru; }
+.saturn { width: 34px; height: 34px; background: khaki; }
+.uranus { width: 22px; height: 22px; background: lightblue; }
+.neptune { width: 20px; height: 20px; background: royalblue; }
+
+/* Tamaños de órbitas */
+.orbit-mercury { width: 160px; height: 160px; margin:-80px; animation-duration: 8s; }
+.orbit-venus { width: 220px; height: 220px; margin:-110px; animation-duration: 15s; }
+.orbit-earth { width: 300px; height: 300px; margin:-150px; animation-duration: 25s; }
+.orbit-mars { width: 360px; height: 360px; margin:-180px; animation-duration: 40s; }
+.orbit-jupiter { width: 460px; height: 460px; margin:-230px; animation-duration: 100s; }
+.orbit-saturn { width: 540px; height: 540px; margin:-270px; animation-duration: 150s; }
+.orbit-uranus { width: 620px; height: 620px; margin:-310px; animation-duration: 200s; }
+.orbit-neptune { width: 680px; height: 680px; margin:-340px; animation-duration: 250s; }
+
+/* Animación del giro */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Etiquetas de planetas (nombres) */
+.label {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(10px, -50%);
+  white-space: nowrap;
+  font-size: 12px;
+  color: #fff;
+  animation: counter-rotate linear infinite;
+}
+@keyframes counter-rotate {
+  from { transform: translate(10px, -50%) rotate(0deg); }
+  to { transform: translate(10px, -50%) rotate(-360deg); }
+}
+
+/* Sincronización de animaciones */
+.orbit-mercury .label { animation-duration: 8s; }
+.orbit-venus .label { animation-duration: 15s; }
+.orbit-earth .label { animation-duration: 25s; }
+.orbit-mars .label { animation-duration: 40s; }
+.orbit-jupiter .label { animation-duration: 100s; }
+.orbit-saturn .label { animation-duration: 150s; }
+.orbit-uranus .label { animation-duration: 200s; }
+.orbit-neptune .label { animation-duration: 250s; }
+
+/* Modal */
+#planet-modal.hidden { display: none; }
+#planet-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
